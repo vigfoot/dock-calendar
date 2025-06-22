@@ -6,3 +6,4 @@ dist
 .cache
 .qodo
 .idea
+/dock-calendar.iml
