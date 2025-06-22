@@ -21,12 +21,51 @@ html, body {
     padding: 3rem;
 }
 
+#main-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#real-time {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#real-time > * {
+    text-align: center;
+    font-size: 10rem;
+    margin: 1rem 0;
+    animation: colorSilverToGray 1s infinite;
+}
+
+#real-time > .time-unit {
+    padding: 2rem;
+    margin: 1rem;
+    border: 2px solid gray;
+    border-radius: 1rem;
+}
+
 #reload-time:before {
-    content: 'Remain reload times ';
+    content: 'Remain reload times... ';
 }
 
 #reload-time {
+    position: fixed;
+    right: 10px;
+    top: 10px;
     text-align: right;
+}
+
+@keyframes colorSilverToGray {
+    0%, 100%{
+        color: gray;
+    }
+    50% {
+        color: inherit;
+    }
 }
 
 @media (min-width: 1200px) {
