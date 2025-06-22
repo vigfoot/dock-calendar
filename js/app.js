@@ -6,9 +6,12 @@ setInterval(() => {
     document.querySelector('#real-time > .seconds').innerText = date.getSeconds();
 
     const reloadTimeNode = document.getElementById('reload-time');
-    if (reloadTimeNode.innerText === 0 + unit || reloadTimeNode.innerText === '') {
+    if (reloadTimeNode.innerText === '') {
         reloadTimeNode.innerText = 60 + unit;
-        history.pushState(null, null, location.href);
+
+    } else if (reloadTimeNode.innerText === 0 + unit) {
+        reloadTimeNode.innerText = 60 + unit;
+        location.replace(location.href);
 
     } else {
         reloadTimeNode.innerText = Number(reloadTimeNode.innerText?.replace(unit, '')) - 1 + unit;
