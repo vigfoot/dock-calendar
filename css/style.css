@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 * {
@@ -8,17 +9,26 @@ html, body {
     color: silver;
 }
 
+#main-wrapper {
+    display: block;
+    margin: 2rem auto;
+}
+
 #main-wrapper > article {
     max-width: 600px;
     display: block;
+    height: 100vh;
 }
 
-
-@media (max-width: 1200px) {
-    #main-wrapper{
+@media (min-width: 1200px) {
+    #main-wrapper {
         display: flex;
         justify-content: space-around;
     }
 
+    #main-wrapper > article {
+        max-width: 600px;
+        display: block;
+    }
 
 }
