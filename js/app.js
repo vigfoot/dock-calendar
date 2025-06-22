@@ -11,7 +11,7 @@ setInterval(() => {
     });
 
     const reloadTimeNode = document.getElementById('reload-time');
-    if (reloadTimeNode.innerText === '') {
+    if (reloadTimeNode.innerText === 0 + unit) {
         location.replace(location.origin + '?nocache=' + Date.now());
 
     } else {
