@@ -16,7 +16,7 @@ html, body {
 }
 
 #main-wrapper > article {
-    max-width: 600px;
+    max-width: 950px;
     height: 100vh;
     padding: 3rem;
 }
@@ -46,6 +46,8 @@ html, body {
     margin: 1rem;
     border: 2px solid gray;
     border-radius: 1rem;
+    width: 288px;
+    height: 288px;
 }
 
 #reload-time:before {
