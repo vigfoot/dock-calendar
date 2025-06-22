@@ -5,13 +5,14 @@ setInterval(() => {
     document.querySelector('#real-time > .minutes').innerText = date.getMinutes();
     document.querySelector('#real-time > .seconds').innerText = date.getSeconds();
 
+    document.querySelectorAll('#real-time > .time-unit').forEach((node, key) => {
+        if (node.innerText.length === 2) return;
+        node.innerText = '0' + node.innerText;
+    });
+
     const reloadTimeNode = document.getElementById('reload-time');
     if (reloadTimeNode.innerText === '') {
-        reloadTimeNode.innerText = 60 + unit;
-
-    } else if (reloadTimeNode.innerText === 0 + unit) {
-        reloadTimeNode.innerText = 60 + unit;
-        location.replace(location.href);
+        location.replace(location.origin + '?nocache=' + Date.now());
 
     } else {
         reloadTimeNode.innerText = Number(reloadTimeNode.innerText?.replace(unit, '')) - 1 + unit;

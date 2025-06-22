@@ -16,7 +16,7 @@ html, body {
 }
 
 #main-wrapper > article {
-    max-width: 950px;
+    max-width: 600px;
     height: 100vh;
     padding: 3rem;
 }
@@ -36,18 +36,18 @@ html, body {
 
 #real-time > * {
     text-align: center;
-    font-size: 10rem;
+    font-size: calc(200px - 5.5rem);
     margin: 1rem 0;
     animation: colorSilverToGray 1s infinite;
+    height: 200px;
 }
 
 #real-time > .time-unit {
-    padding: 2rem;
+    padding: 1rem;
     margin: 1rem;
     border: 2px solid gray;
     border-radius: 1rem;
-    width: 288px;
-    height: 288px;
+    width: 200px;
 }
 
 #reload-time:before {
