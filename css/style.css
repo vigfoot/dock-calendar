@@ -32,14 +32,11 @@ html, body {
     justify-content: center;
 }
 
-
-
 #real-time > * {
     text-align: center;
-    font-size: calc(200px - 5.5rem);
+    font-size: 9rem;
     margin: 1rem 0;
     animation: colorSilverToGray 1s infinite;
-    height: 200px;
 }
 
 #real-time > .time-unit {
@@ -62,7 +59,7 @@ html, body {
 }
 
 @keyframes colorSilverToGray {
-    0%, 100%{
+    0%, 100% {
         color: gray;
     }
     50% {
