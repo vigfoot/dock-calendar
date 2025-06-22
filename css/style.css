@@ -7,6 +7,7 @@ html, body {
 * {
     background: black;
     color: silver;
+    box-sizing: border-box;
 }
 
 #main-wrapper {
@@ -16,19 +17,28 @@ html, body {
 
 #main-wrapper > article {
     max-width: 600px;
-    display: block;
     height: 100vh;
+    padding: 3rem;
+}
+
+#reload-time:before {
+    content: 'Remain reload times ';
+}
+
+#reload-time {
+    text-align: right;
 }
 
 @media (min-width: 1200px) {
     #main-wrapper {
+        margin: 0;
         display: flex;
         justify-content: space-around;
     }
 
     #main-wrapper > article {
-        max-width: 600px;
-        display: block;
+        max-width: 100%;
+        width: 100%;
     }
 
 }
