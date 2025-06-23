@@ -4,10 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RealTime Calender Dock</title>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="description" content="">
     <link rel="apple-touch-icon" href="img/forestfull-icon.png">
-    <script defer src="js/app.js"></script>
+    <script>
+        const script = document.createElement("script");
+        script.src = `js/app.js?nocache='${Date.now()}`;
+        document.head.appendChild(script);
+
+        const link = document.createElement("link");
+        link.rel = 'stylesheet'
+        link.href = `css/style.css?nocache='${Date.now()}`;
+        document.head.appendChild(link);
+    </script>
 </head>
 <body>
 <section id="main-wrapper">
