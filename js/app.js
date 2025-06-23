@@ -12,7 +12,7 @@ setInterval(() => {
 
     const reloadTimeNode = document.getElementById('reload-time');
     if (reloadTimeNode.innerText === 0 + unit) {
-        location.replace(location.origin);
+        location.replace(location.href);
 
     } else {
         reloadTimeNode.innerText = Number(reloadTimeNode.innerText?.replace(unit, '')) - 1 + unit;
