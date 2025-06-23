@@ -12,7 +12,7 @@ setInterval(() => {
 
     const reloadTimeNode = document.getElementById('reload-time');
     if (reloadTimeNode.innerText === 0 + unit) {
-        location.replace(location.origin + '?nocache=' + Date.now());
+        location.replace(location.origin + (location.hostname === 'localhost' ? '&' : '?') + 'nocache=' + Date.now());
 
     } else {
         reloadTimeNode.innerText = Number(reloadTimeNode.innerText?.replace(unit, '')) - 1 + unit;
