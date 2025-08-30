@@ -1,5 +1,5 @@
 :root{
-    color-scheme: dark;
+    /*color-scheme: dark;*/
     --main-color : silver;
 }
 
@@ -9,9 +9,9 @@ html, body {
 }
 
 * {
-    background: black;
-    color: silver;
-    box-sizing: border-box;
+    /*background: black;*/
+    /*color: silver;*/
+    /*box-sizing: border-box;*/
 }
 
 #main-wrapper {
@@ -61,6 +61,7 @@ html, body {
         color: var(--main-color);
     }
 }
+
 
 @media (min-width: 1200px) {
     #main-wrapper {
