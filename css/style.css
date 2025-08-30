@@ -20,7 +20,6 @@ html, body {
 }
 
 #main-wrapper > article {
-    height: 100vh;
     padding: 3rem;
 }
 
