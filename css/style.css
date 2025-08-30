@@ -20,7 +20,7 @@ html, body {
 }
 
 #main-wrapper > article {
-    padding: 3rem;
+    /*padding: 3rem;*/
 }
 
 #main-calender {
@@ -46,12 +46,10 @@ html, body {
     align-self: anchor-center;
 }
 
-#real-time > .time-unit, #real-time-korea > .time-unit {
+.time-unit {
     padding: 1rem;
-    margin: 1rem;
     border: 2px solid gray;
     border-radius: 1rem;
-    width: 5.5rem;
 }
 
 @keyframes colorSilverToGray {

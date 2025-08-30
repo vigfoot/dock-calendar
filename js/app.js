@@ -5,7 +5,7 @@ setInterval(() => {
     document.querySelector('#real-time > .minutes').innerText = date.getMinutes();
     document.querySelector('#real-time > .seconds').innerText = date.getSeconds();
 
-    document.querySelector('#real-time-korea > .hours').innerText = date.getUTCHours() + 9;
+    document.querySelector('#real-time-korea > .hours').innerText = date.getUTCHours() + 9 > 24 ? date.getUTCHours() + 9 - 24 : date.getUTCHours() + 9;
     document.querySelector('#real-time-korea > .minutes').innerText = date.getUTCMinutes();
     document.querySelector('#real-time-korea > .seconds').innerText = date.getUTCSeconds();
 
