@@ -43,6 +43,7 @@ html, body {
     font-size: 3rem;
     margin: 1rem 0;
     animation: colorSilverToGray 1s infinite;
+    align-self: anchor-center;
 }
 
 #real-time > .time-unit, #real-time-korea > .time-unit {
