@@ -40,7 +40,7 @@ html, body {
 
 #real-time > *, #real-time-korea > * {
     text-align: center;
-    font-size: 9rem;
+    font-size: 3rem;
     margin: 1rem 0;
     animation: colorSilverToGray 1s infinite;
 }
@@ -50,7 +50,7 @@ html, body {
     margin: 1rem;
     border: 2px solid gray;
     border-radius: 1rem;
-    width: 200px;
+    width: 5.5rem;
 }
 
 @keyframes colorSilverToGray {
