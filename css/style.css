@@ -32,41 +32,28 @@ html, body {
     padding: 10px;
 }
 
-#main-time {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.time-wrapper {
+    padding: 3rem;
 }
 
-#real-time {
+#real-time, #real-time-korea {
     display: flex;
     justify-content: center;
 }
 
-#real-time > * {
+#real-time > *, #real-time-korea > * {
     text-align: center;
     font-size: 9rem;
     margin: 1rem 0;
     animation: colorSilverToGray 1s infinite;
 }
 
-#real-time > .time-unit {
+#real-time > .time-unit, #real-time-korea > .time-unit {
     padding: 1rem;
     margin: 1rem;
     border: 2px solid gray;
     border-radius: 1rem;
     width: 200px;
-}
-
-#reload-time:before {
-    content: 'Remain reload times... ';
-}
-
-#reload-time {
-    position: fixed;
-    right: 10px;
-    top: 10px;
-    text-align: right;
 }
 
 @keyframes colorSilverToGray {

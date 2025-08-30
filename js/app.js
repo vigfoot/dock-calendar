@@ -5,17 +5,13 @@ setInterval(() => {
     document.querySelector('#real-time > .minutes').innerText = date.getMinutes();
     document.querySelector('#real-time > .seconds').innerText = date.getSeconds();
 
-    document.querySelectorAll('#real-time > .time-unit').forEach((node, key) => {
+    document.querySelector('#real-time-korea > .hours').innerText = date.getUTCHours() + 9;
+    document.querySelector('#real-time-korea > .minutes').innerText = date.getUTCMinutes();
+    document.querySelector('#real-time-korea > .seconds').innerText = date.getUTCSeconds();
+
+    document.querySelectorAll('#real-time > .time-unit, #real-time-korea > .time-unit').forEach((node, key) => {
         if (node.innerText.length === 2) return;
         node.innerText = '0' + node.innerText;
     });
 
-    const reloadTimeNode = document.getElementById('reload-time');
-    if (reloadTimeNode.innerText === 0 + unit) {
-        location.replace(location.href);
-
-    } else {
-        reloadTimeNode.innerText = Number(reloadTimeNode.innerText?.replace(unit, '')) - 1 + unit;
-
-    }
 }, 1000);

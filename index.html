@@ -1,37 +1,51 @@
 <!doctype html>
 <html lang="ko">
-<head>
+<head style="background: black; color: silver;">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RealTime Calender Dock</title>
     <link rel="apple-touch-icon" href="img/forestfull-icon.png">
     <script>
+        const pathname = location.pathname.substring(location.pathname.indexOf('/'), location.pathname.indexOf('index'));
+
         const script = document.createElement("script");
-        script.src = `js/app.js?nocache='${Date.now()}`;
+        script.src = pathname + `js/app.js?nocache='${Date.now()}`;
         document.head.appendChild(script);
 
         const link = document.createElement("link");
         link.rel = 'stylesheet'
-        link.href = `css/style.css?nocache='${Date.now()}`;
+        link.href = pathname + `css/style.css?nocache='${Date.now()}`;
         document.head.appendChild(link);
     </script>
 </head>
-<body style="background: black; color: silver;">
+<body>
 <section id="main-wrapper">
-    <div id="reload-time">60</div>
+    <article class="main-time">
+        <div class="time-wrapper">
+            <p style="text-align: center">your time</p>
+            <div id="real-time">
+                <div class="hours time-unit">--</div>
+                <div>:</div>
+                <div class="minutes time-unit">--</div>
+                <div>:</div>
+                <div class="seconds time-unit">--</div>
+            </div>
+        </div>
+        <div class="time-wrapper">
+            <p style="text-align: center">korea time</p>
+            <div id="real-time-korea">
+                <div class="hours time-unit">--</div>
+                <div>:</div>
+                <div class="minutes time-unit">--</div>
+                <div>:</div>
+                <div class="seconds time-unit">--</div>
+            </div>
+        </div>
+    </article>
     <article id="main-box">
         <article id="main-calender">
             hi
         </article>
-    </article>
-    <article id="main-time">
-        <div id="real-time">
-            <div class="hours time-unit">--</div>
-            <div>:</div>
-            <div class="minutes time-unit">--</div>
-            <div>:</div>
-            <div class="seconds time-unit">--</div>
-        </div>
     </article>
 </section>
 </body>
