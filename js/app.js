@@ -15,3 +15,17 @@ setInterval(() => {
     });
 
 }, 1000);
+
+
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', '');
+xhr.onreadystatechange = res => {
+    if (xhr.readyState !== xhr.DONE || xhr.status > 210) return;
+
+
+
+}
+
+xhr.send();
+

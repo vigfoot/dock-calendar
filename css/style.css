@@ -30,7 +30,7 @@ html, body {
 }
 
 .time-wrapper {
-    padding: 3rem;
+    margin: 2rem;
 }
 
 #real-time, #real-time-korea {
