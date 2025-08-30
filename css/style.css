@@ -1,11 +1,16 @@
-:root{
+:root {
     /*color-scheme: dark;*/
-    --main-color : silver;
+    --main-color: silver;
+    --background-color: darkseagreen;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+}
+
+body {
+    background: linear-gradient(0deg, var(--background-color), white, var(--background-color));
 }
 
 * {
@@ -29,8 +34,17 @@ html, body {
     padding: 10px;
 }
 
+.main-time {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: space-around;
+}
+
 .time-wrapper {
-    margin: 2rem;
+    margin: 1rem;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 #real-time, #real-time-korea {
@@ -39,15 +53,14 @@ html, body {
 }
 
 #real-time > *, #real-time-korea > * {
+    font-size: 1.2rem;
     text-align: center;
-    font-size: 3rem;
-    margin: 1rem 0;
     animation: colorSilverToGray 1s infinite;
     align-self: anchor-center;
 }
 
 .time-unit {
-    padding: 1rem;
+    padding: 0.7rem;
     border: 2px solid gray;
     border-radius: 1rem;
 }
@@ -56,11 +69,18 @@ html, body {
     0%, 100% {
         color: gray;
     }
+
     50% {
         color: var(--main-color);
     }
 }
 
+
+@media (min-width: 600px) {
+    #real-time > *, #real-time-korea > * {
+        font-size: 5rem;
+    }
+}
 
 @media (min-width: 1200px) {
     #main-wrapper {
@@ -73,5 +93,4 @@ html, body {
         max-width: 100%;
         width: 100%;
     }
-
 }
