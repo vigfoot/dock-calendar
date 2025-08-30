@@ -6,7 +6,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 * {
@@ -21,7 +20,6 @@ html, body {
 }
 
 #main-wrapper > article {
-    max-width: 600px;
     height: 100vh;
     padding: 3rem;
 }
