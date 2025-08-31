@@ -28,10 +28,11 @@ body {
     /*padding: 3rem;*/
 }
 
-#main-calender {
+#profiles {
     border: 1px solid var(--main-color);
     border-radius: 10px;
     padding: 10px;
+    display: flex;
 }
 
 .main-time {
@@ -59,10 +60,23 @@ body {
     align-self: anchor-center;
 }
 
+.wall {
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px var(--main-color), -1px 1px 1px var(--main-color), 1px -1px 1px var(--main-color), -1px -1px 1px var(--main-color);
+    border: 1px groove var(--main-color);
+}
+
+.wall + .korea {
+    background: linear-gradient(45deg, var(--background-color), white, var(--background-color));
+}
+
+
 .time-unit {
-    padding: 0.7rem;
+    margin: 0.2rem;
+    padding: 0.2rem;
     border: 2px solid gray;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 @keyframes colorSilverToGray {
