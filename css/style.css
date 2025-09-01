@@ -29,11 +29,22 @@ body {
 }
 
 #profiles {
-    border: 1px solid var(--main-color);
     border-radius: 10px;
     padding: 10px;
     display: flex;
+    justify-content: space-around;
 }
+
+#profiles > .wall {
+    text-align: center;
+    margin: 10px;
+}
+
+#profiles > .wall > img {
+    width: 3rem;
+
+}
+
 
 .main-time {
     display: flex;
