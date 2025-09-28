@@ -1,7 +1,7 @@
 :root {
     /*color-scheme: dark;*/
     --main-color: silver;
-    --background-color: darkseagreen;
+    --background-color: dark;
 }
 
 html, body {
@@ -104,18 +104,5 @@ body {
 @media (min-width: 600px) {
     #real-time > *, #real-time-korea > * {
         font-size: 5rem;
-    }
-}
-
-@media (min-width: 1200px) {
-    #main-wrapper {
-        margin: 0;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    #main-wrapper > article {
-        max-width: 100%;
-        width: 100%;
     }
 }
