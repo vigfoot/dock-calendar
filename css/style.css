@@ -14,9 +14,9 @@ body {
 }
 
 * {
-    /*background: black;*/
-    /*color: silver;*/
-    /*box-sizing: border-box;*/
+    background: black;
+    color: silver;
+    box-sizing: border-box;
 }
 
 #main-wrapper {
