@@ -51,7 +51,7 @@ body {
 .real-time {
     display: flex;
     text-align: center;
-    font-size: 5rem;
+    font-size: 10vw;
     justify-content: center;
 }
 
