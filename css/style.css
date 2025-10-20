@@ -1,27 +1,34 @@
 :root {
     /*color-scheme: dark;*/
     --main-color: silver;
-    --background-color: dark;
+    --background-color: black;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 html, body {
     margin: 0;
     padding: 0;
+    background: var(--background-color);
+    color: silver;
 }
 
 body {
-    background: linear-gradient(0deg, var(--background-color), white, var(--background-color));
+    background: linear-gradient(135deg, var(--main-color), var(--background-color));
+    height: 100vh;
 }
 
-* {
-    background: black;
-    color: silver;
-    box-sizing: border-box;
+.main-time {
+    padding: 5px;
 }
 
 .wall {
+    background: rgba(0, 0, 0, 0.7);
     max-width: 30rem;
-    margin: 5rem auto;
+    margin: 1rem;
+    padding: 1rem;
 }
 
 .wall p {
@@ -30,9 +37,12 @@ body {
 }
 
 .wall, .time-unit {
-    border: 1px solid var(--main-color);
-    padding: 1rem;
     border-radius: 1rem;
+}
+
+.time-unit {
+    border: 1px solid;
+    width: 100%;
 }
 
 .real-time {
@@ -40,4 +50,12 @@ body {
     text-align: center;
     font-size: 5rem;
     justify-content: center;
+}
+
+
+@media (width < 600px) {
+
+    .real-time {
+        font-size: 3rem;
+    }
 }
