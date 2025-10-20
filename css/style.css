@@ -55,7 +55,7 @@ body {
     justify-content: center;
 }
 
-@media (width < 900px) {
+@media (width < 1200px) {
     .real-time {
         font-size: 3rem;
     }
