@@ -19,91 +19,25 @@ body {
     box-sizing: border-box;
 }
 
-#main-wrapper {
-    display: block;
-    margin: 2rem auto;
-}
-
-#main-wrapper > article {
-    /*padding: 3rem;*/
-}
-
-#profiles {
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-#profiles > .wall {
-    text-align: center;
-    margin: 10px;
-}
-
-#profiles > .wall > img {
-    width: 3rem;
-
-}
-
-
-.main-time {
-    display: flex;
-    flex-direction: row;
-    margin: 1rem;
-    justify-content: space-around;
-}
-
-.time-wrapper {
-    margin: 1rem;
-    display: inline-flex;
-    flex-direction: column;
-}
-
-#real-time, #real-time-korea {
-    display: flex;
-    justify-content: center;
-}
-
-#real-time > *, #real-time-korea > * {
-    font-size: 1rem;
-    text-align: center;
-    animation: colorSilverToGray 1s infinite;
-    align-self: anchor-center;
-}
-
 .wall {
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px var(--main-color), -1px 1px 1px var(--main-color), 1px -1px 1px var(--main-color), -1px -1px 1px var(--main-color);
-    border: 1px groove var(--main-color);
+    max-width: 30rem;
+    margin: 5rem auto;
 }
 
-.wall + .korea {
-    background: linear-gradient(45deg, var(--background-color), white, var(--background-color));
+.wall p {
+    margin: 0 0 1rem 0;
+    text-align: center;
 }
 
-
-.time-unit {
-    margin: 0.2rem;
-    padding: 0.2rem;
-    border: 2px solid gray;
-    border-radius: 0.5rem;
+.wall, .time-unit {
+    border: 1px solid var(--main-color);
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
-@keyframes colorSilverToGray {
-    0%, 100% {
-        color: gray;
-    }
-
-    50% {
-        color: var(--main-color);
-    }
-}
-
-
-@media (min-width: 1200px) {
-    #real-time > *, #real-time-korea > * {
-        font-size: 5rem;
-    }
+.real-time {
+    display: flex;
+    text-align: center;
+    font-size: 5rem;
+    justify-content: center;
 }
