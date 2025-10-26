@@ -13,16 +13,36 @@ setInterval(() => {
         if (node.innerText.length === 2) return;
         node.innerText = '0' + node.innerText;
     });
-
 }, 1000);
-
 
 let xhr = new XMLHttpRequest();
 xhr.open('GET', '');
 xhr.onreadystatechange = res => {
     if (xhr.readyState !== xhr.DONE || xhr.status > 210) return;
 
+    const profilesNode = document.getElementById('profiles');
+    const wallNode = document.createElement('div');
+    wallNode.setAttribute('class', 'wall');
 
+    const linkNode = document.createElement('a');
+    linkNode.setAttribute('href', 'https://www.tiktok.com/@james_with_dori');
+    linkNode.setAttribute('target', '_blank');
+
+    const imageNode = document.createElement('img');
+    imageNode.setAttribute('alt', 'profile-image');
+    imageNode.setAttribute('src', 'favicon.ico');
+
+    const titleNode = document.createElement('p');
+    titleNode.innerHTML= 'james';
+
+    const vioNode = document.createElement('div');
+    vioNode.innerHTML= 'vio';
+
+    linkNode.appendChild(imageNode);
+    linkNode.appendChild(titleNode);
+    linkNode.appendChild(vioNode);
+    wallNode.appendChild(linkNode);
+    profilesNode.appendChild(wallNode);
 }
 
 xhr.send();

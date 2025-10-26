@@ -15,12 +15,27 @@ html, body {
     color: silver;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     background: linear-gradient(135deg, var(--main-color), var(--background-color));
     height: 100vh;
 }
 
-.main-time {
+#profiles {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+#main-time {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -29,7 +44,6 @@ body {
 
 .wall {
     background: rgba(0, 0, 0, 0.7);
-    margin: 1rem;
     padding: 1rem;
 }
 
@@ -62,7 +76,7 @@ body {
 }
 
 @media (width < 1200px) {
-    .main-time {
+    #main-time {
         display: block;
     }
 
