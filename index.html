@@ -10,6 +10,7 @@
 
         const script = document.createElement("script");
         script.src = pathname + `js/app.js?nocache='${Date.now()}`;
+        script.src = pathname + `js/app.js`;
         document.head.appendChild(script);
 
         const link = document.createElement("link");
@@ -24,7 +25,7 @@
     </article>
     <article id="main-time">
         <div class="wall">
-            <p>🕧 YOUR TIME</p>
+            <p>YOUR TIME</p>
             <div class="real-time">
                 <div class="hours time-unit">--</div>
                 <div>:</div>
@@ -34,7 +35,7 @@
             </div>
         </div>
         <div class="wall korea">
-            <p><img src="img/korea.png" style="width:1.1rem;" alt="korea"> KOREA TIME</p>
+            <p><img src="img/korea.png" style="width:2rem;" alt="korea"> KOREA TIME</p>
             <div class="real-time korea">
                 <div class="hours time-unit">--</div>
                 <div>:</div>

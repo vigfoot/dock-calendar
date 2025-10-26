@@ -1,6 +1,7 @@
 const JAMES = 'james_with_dori';
 const TIKTOK_LOGO = '<img src="img/tiktok.png" alt="TikTok" style="width: 2rem; height: 2rem;">';
 const PAYPAL_LOGO = '<img src="img/paypal.png" alt="PayPal" style="width: 2rem; height: 2rem;">';
+const PROFILE_IMAGE_DIR = 'img/james.jpeg';
 
 setInterval(() => {
     let date = new Date();
@@ -18,58 +19,54 @@ setInterval(() => {
     });
 }, 1000);
 
-const url = 'https://www.tiktok.com/@' + JAMES;
-const proxy = "https://api.allorigins.win/raw?url=" + encodeURIComponent(url);
+// const url = 'https://www.tiktok.com/@' + JAMES;
+// const proxy = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url);
+// let xhr = new XMLHttpRequest();
+// xhr.open('GET', proxy);
+// xhr.onreadystatechange = res => {
+//     if (xhr.readyState !== xhr.DONE || xhr.status > 210) return;
+//
+//     const html = xhr.response;
+//
+//     const img = html.match(/property="og:image" content="([^"]+)"/)?.[1];
+//     const name = html.match(/property="og:title" content="([^"]+)"/)?.[1];
+//     const bio = html.match(/property="og:description" content="([^"]+)"/)?.[1];
 
-let xhr = new XMLHttpRequest();
-xhr.open('GET', proxy);
-xhr.onreadystatechange = res => {
-    if (xhr.readyState !== xhr.DONE || xhr.status > 210) return;
+const profilesNode = document.getElementById('profiles');
+const wallNode = document.createElement('div');
+wallNode.setAttribute('class', 'wall');
 
-    const html = xhr.responseText;
+const paypalLinkNode = document.createElement('a');
+paypalLinkNode.setAttribute('href', 'https://paypal.me/vigfoot');
+paypalLinkNode.setAttribute('class', 'wall display-block');
+paypalLinkNode.setAttribute('target', '_blank');
+paypalLinkNode.innerHTML = PAYPAL_LOGO + 'PayPal - vigfoot';
 
-    const img = html.match(/property="og:image" content="([^"]+)"/)?.[1];
-    const name = html.match(/property="og:title" content="([^"]+)"/)?.[1];
-    const bio = html.match(/property="og:description" content="([^"]+)"/)?.[1];
+const tiktokLinkNode = document.createElement('a');
+tiktokLinkNode.setAttribute('href', 'https://www.tiktok.com/@' + JAMES);
+tiktokLinkNode.setAttribute('class', 'wall display-block');
+tiktokLinkNode.setAttribute('target', '_blank');
+tiktokLinkNode.innerHTML = TIKTOK_LOGO + 'TikTok Profile';
 
-    console.log("프로필 이미지:", img);
-    console.log("닉네임:", name);
-    console.log("소개:", bio);
+const imageNode = document.createElement('img');
+imageNode.style.width = '10rem';
+imageNode.style.height = '10rem';
+imageNode.style.margin = '0 auto';
+imageNode.style.borderRadius = '1rem';
+imageNode.setAttribute('class', 'display-block');
+imageNode.setAttribute('alt', 'profile-image');
+imageNode.setAttribute('src', PROFILE_IMAGE_DIR);
 
-    const profilesNode = document.getElementById('profiles');
-    const wallNode = document.createElement('div');
-    wallNode.setAttribute('class', 'wall');
+const pontNode = document.createElement('p');
+pontNode.style.color = 'white';
+pontNode.style.margin = '1rem auto';
+pontNode.innerText = `Welcome James's family`;
 
-    const paypalLinkNode = document.createElement('a');
-    paypalLinkNode.setAttribute('href', 'https://paypal.me/vigfoot');
-    paypalLinkNode.setAttribute('class', 'wall display-block');
-    paypalLinkNode.setAttribute('target', '_blank');
-    paypalLinkNode.innerHTML = PAYPAL_LOGO + 'PayPal - vigfoot';
-
-    const tiktokLinkNode = document.createElement('a');
-    tiktokLinkNode.setAttribute('href', 'https://www.tiktok.com/@james_with_dori');
-    tiktokLinkNode.setAttribute('class', 'wall display-block');
-    tiktokLinkNode.setAttribute('target', '_blank');
-    tiktokLinkNode.innerHTML = TIKTOK_LOGO + 'TikTok Profile';
-
-    const imageNode = document.createElement('img');
-    imageNode.setAttribute('class', 'display-block');
-    imageNode.setAttribute('alt', 'profile-image');
-    imageNode.setAttribute('src', 'favicon.ico');
-
-    const titleNode = document.createElement('p');
-    titleNode.innerHTML = 'james';
-
-    const bioNode = document.createElement('div');
-    bioNode.innerHTML = 'not yet bio';
-
-    wallNode.appendChild(imageNode);
-    wallNode.appendChild(paypalLinkNode);
-    wallNode.appendChild(tiktokLinkNode);
-    wallNode.appendChild(titleNode);
-    wallNode.appendChild(bioNode);
-    profilesNode.appendChild(wallNode);
-}
-
-xhr.send();
-
+wallNode.appendChild(imageNode);
+wallNode.appendChild(pontNode);
+wallNode.appendChild(tiktokLinkNode);
+wallNode.appendChild(paypalLinkNode);
+profilesNode.appendChild(wallNode);
+// }
+//
+// xhr.send();
