@@ -22,7 +22,7 @@ a {
 
 body {
     background: linear-gradient(135deg, var(--main-color), var(--background-color));
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #profiles {
