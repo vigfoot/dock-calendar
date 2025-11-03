@@ -1,5 +1,7 @@
 const JAMES = 'james_with_dori';
+const PAYPAL_ID = 'jamesdori';
 const TIKTOK_LOGO = '<img src="img/tiktok.png" alt="TikTok" style="width: 2rem; height: 2rem;">';
+const PAYPAL_LOGO = '<img src="img/paypal.png" alt="PayPal" style="width: 2rem; height: 2rem;">';
 const PROFILE_IMAGE_DIR = 'img/james.jpeg';
 
 setInterval(() => {
@@ -34,6 +36,10 @@ paypalDollarBoxNode.id = 'paypal-dollar-box'
 const paypalDollarUnitNode = document.createElement('div');
 paypalDollarUnitNode.id = 'paypal-dollar-unit'
 paypalDollarUnitNode.innerText = '$'
+
+const paypalBtnNode = document.createElement('button');
+paypalBtnNode.id = 'paypal-btn-node'
+paypalBtnNode.innerHTML = PAYPAL_LOGO + ' Send'
 
 const paypalDollarNode = document.createElement('input');
 paypalDollarNode.setAttribute('type', 'number');
@@ -73,29 +79,20 @@ paypalDollarBoxNode.appendChild(paypalDollarUnitNode);
 paypalDollarBoxNode.appendChild(paypalDollarNode);
 paypalBoxNode.appendChild(paypalDollarBoxNode);
 paypalBoxNode.appendChild(paypalLinkNode);
+paypalBoxNode.appendChild(paypalBtnNode);
 wallNode.appendChild(paypalBoxNode);
 profilesNode.appendChild(wallNode);
 
-paypal.Buttons({
-    createOrder: function(data, actions) {
-        const amount = document.getElementById('paypal-amount').value;
-        return actions.order.create({
-            purchase_units: [{
-                amount: {
-                    value: amount
-                },
-                description: 'Payment for James'
-            }]
-        });
-    },
-    onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-            alert('Transaction completed by ' + details.payer.name.given_name +
-                '\nAmount: $' + details.purchase_units[0].amount.value);
-        });
-    },
-    onError: function(err) {
-        console.error(err);
-        alert('An error occurred during the transaction.');
+paypalBtnNode.addEventListener('click', () => {
+    const amount = parseFloat(paypalDollarNode.value);
+    if (!amount || amount <= 0) {
+        alert("금액을 정확히 입력해주세요.");
+        return;
     }
-}).render('#paypal');
+
+    // PayPal.me URL 생성
+    const url = `https://paypal.me/${PAYPAL_ID}/${amount}`;
+
+    // 새 창으로 열기
+    window.open(url, '_blank');
+});

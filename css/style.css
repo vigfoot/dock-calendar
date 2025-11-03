@@ -83,6 +83,10 @@ body {
 
 }
 
+#paypal-dollar-box > *:first-child {
+    margin-right: 1rem;
+}
+
 #paypal-dollar-box > * {
     margin: 0.5rem auto;
     font-size: 1.2rem;
@@ -96,6 +100,17 @@ body {
     background: transparent;
     color: white;
     max-width: 3rem;
+}
+
+#paypal-btn-node {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin: 0.5rem auto;
+    background: transparent;
+    border-radius: 0.5rem;
+    color: var(--main-color);
 }
 
 @media (width < 600px) {
