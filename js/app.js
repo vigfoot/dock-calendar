@@ -1,6 +1,5 @@
 const JAMES = 'james_with_dori';
 const TIKTOK_LOGO = '<img src="img/tiktok.png" alt="TikTok" style="width: 2rem; height: 2rem;">';
-const PAYPAL_LOGO = '<img src="img/paypal.png" alt="PayPal" style="width: 2rem; height: 2rem;">';
 const PROFILE_IMAGE_DIR = 'img/james.jpeg';
 
 setInterval(() => {
@@ -19,28 +18,27 @@ setInterval(() => {
     });
 }, 1000);
 
-// const url = 'https://www.tiktok.com/@' + JAMES;
-// const proxy = "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(url);
-// let xhr = new XMLHttpRequest();
-// xhr.open('GET', proxy);
-// xhr.onreadystatechange = res => {
-//     if (xhr.readyState !== xhr.DONE || xhr.status > 210) return;
-//
-//     const html = xhr.response;
-//
-//     const img = html.match(/property="og:image" content="([^"]+)"/)?.[1];
-//     const name = html.match(/property="og:title" content="([^"]+)"/)?.[1];
-//     const bio = html.match(/property="og:description" content="([^"]+)"/)?.[1];
-
 const profilesNode = document.getElementById('profiles');
 const wallNode = document.createElement('div');
 wallNode.setAttribute('class', 'wall');
 
-const paypalLinkNode = document.createElement('a');
-paypalLinkNode.setAttribute('href', 'https://paypal.me/jamesdori');
-paypalLinkNode.setAttribute('class', 'wall display-block');
-paypalLinkNode.setAttribute('target', '_blank');
-paypalLinkNode.innerHTML = PAYPAL_LOGO + 'PayPal - JamesDori';
+const paypalBoxNode = document.createElement('div');
+paypalBoxNode.setAttribute('class', 'wall display-block');
+
+const paypalDollarBoxNode = document.createElement('div');
+paypalDollarBoxNode.id = 'paypal-dollar-box'
+
+const paypalDollarUnitNode = document.createElement('div');
+paypalDollarUnitNode.innerText = '$'
+
+const paypalDollarNode = document.createElement('input');
+paypalDollarNode.setAttribute('type', 'number');
+paypalDollarNode.setAttribute('min', '10');
+paypalDollarNode.id = 'paypal-amount';
+paypalDollarNode.value = '10';
+
+const paypalLinkNode = document.createElement('div');
+paypalLinkNode.id = 'paypal';
 
 const tiktokLinkNode = document.createElement('a');
 tiktokLinkNode.setAttribute('href', 'https://www.tiktok.com/@' + JAMES);
@@ -65,8 +63,34 @@ pontNode.innerText = `Welcome James's family`;
 wallNode.appendChild(imageNode);
 wallNode.appendChild(pontNode);
 wallNode.appendChild(tiktokLinkNode);
-wallNode.appendChild(paypalLinkNode);
+
+paypalDollarBoxNode.appendChild(paypalDollarUnitNode);
+paypalDollarBoxNode.appendChild(paypalDollarNode);
+paypalBoxNode.appendChild(paypalDollarBoxNode);
+paypalBoxNode.appendChild(paypalLinkNode);
+wallNode.appendChild(paypalBoxNode);
 profilesNode.appendChild(wallNode);
-// }
-//
-// xhr.send();
+
+paypal.Buttons({
+    createOrder: function(data, actions) {
+        const amount = document.getElementById('paypal-amount').value;
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: amount
+                },
+                description: 'Payment for James'
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Transaction completed by ' + details.payer.name.given_name +
+                '\nAmount: $' + details.purchase_units[0].amount.value);
+        });
+    },
+    onError: function(err) {
+        console.error(err);
+        alert('An error occurred during the transaction.');
+    }
+}).render('#paypal');
