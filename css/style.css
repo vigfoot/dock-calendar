@@ -84,18 +84,18 @@ body {
 }
 
 #paypal-dollar-box > * {
-    padding: 0.5rem;
     margin: 0.5rem auto;
     font-size: 1.2rem;
 }
 
-#paypal-dollar-box > *:first-child {
+#paypal-dollar-unit {
     color: white;
 }
 
 #paypal-amount {
     background: transparent;
     color: white;
+    max-width: 3rem;
 }
 
 @media (width < 600px) {

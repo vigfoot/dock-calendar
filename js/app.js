@@ -25,10 +25,14 @@ wallNode.setAttribute('class', 'wall');
 const paypalBoxNode = document.createElement('div');
 paypalBoxNode.setAttribute('class', 'wall display-block');
 
+const paypalMentionNode = document.createElement('div');
+paypalMentionNode.innerText = `I'll give you `;
+
 const paypalDollarBoxNode = document.createElement('div');
 paypalDollarBoxNode.id = 'paypal-dollar-box'
 
 const paypalDollarUnitNode = document.createElement('div');
+paypalDollarUnitNode.id = 'paypal-dollar-unit'
 paypalDollarUnitNode.innerText = '$'
 
 const paypalDollarNode = document.createElement('input');
@@ -64,6 +68,7 @@ wallNode.appendChild(imageNode);
 wallNode.appendChild(pontNode);
 wallNode.appendChild(tiktokLinkNode);
 
+paypalDollarBoxNode.appendChild(paypalMentionNode);
 paypalDollarBoxNode.appendChild(paypalDollarUnitNode);
 paypalDollarBoxNode.appendChild(paypalDollarNode);
 paypalBoxNode.appendChild(paypalDollarBoxNode);
