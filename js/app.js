@@ -37,7 +37,7 @@ const wallNode = document.createElement('div');
 wallNode.setAttribute('class', 'wall');
 
 const paypalLinkNode = document.createElement('a');
-paypalLinkNode.setAttribute('href', 'https://paypal.me/vigfoot');
+paypalLinkNode.setAttribute('href', 'https://paypal.me/jamesdori');
 paypalLinkNode.setAttribute('class', 'wall display-block');
 paypalLinkNode.setAttribute('target', '_blank');
 paypalLinkNode.innerHTML = PAYPAL_LOGO + 'PayPal - vigfoot';
