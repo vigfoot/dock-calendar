@@ -40,7 +40,7 @@ const paypalLinkNode = document.createElement('a');
 paypalLinkNode.setAttribute('href', 'https://paypal.me/jamesdori');
 paypalLinkNode.setAttribute('class', 'wall display-block');
 paypalLinkNode.setAttribute('target', '_blank');
-paypalLinkNode.innerHTML = PAYPAL_LOGO + 'PayPal - vigfoot';
+paypalLinkNode.innerHTML = PAYPAL_LOGO + 'PayPal - JamesDori';
 
 const tiktokLinkNode = document.createElement('a');
 tiktokLinkNode.setAttribute('href', 'https://www.tiktok.com/@' + JAMES);
