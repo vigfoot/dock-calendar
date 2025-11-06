@@ -28,7 +28,7 @@ const paypalBoxNode = document.createElement('div');
 paypalBoxNode.setAttribute('class', 'wall display-block');
 
 const paypalMentionNode = document.createElement('div');
-paypalMentionNode.innerHTML = `Please make sure to select the <p style="color: white; margin: 0;">“Sending to a friend”</p> option when you send the donation.`;
+paypalMentionNode.innerHTML = `Please make sure to select the <p style="color: white; margin: 0;">“Sending to a friend”</p> option when you send the donation.<br>so there won’t be any extra fees.`;
 paypalMentionNode.style.fontSize = '1rem';
 paypalMentionNode.style.textAlign = 'center';
 
