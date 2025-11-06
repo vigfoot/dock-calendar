@@ -1,7 +1,7 @@
 const JAMES = 'james_with_dori';
 const PAYPAL_ID = 'jamesdori';
 const TIKTOK_LOGO = '<img src="img/tiktok.png" alt="TikTok" style="width: 2rem; height: 2rem;">';
-const PAYPAL_LOGO = '<img src="img/paypal.png" alt="PayPal" style="width: 2rem; height: 2rem;">';
+const PAYPAL_LOGO = '<img src="img/paypal.png" alt="PayPal" style="height: 2rem;">';
 const PROFILE_IMAGE_DIR = 'img/james.jpeg';
 
 setInterval(() => {
@@ -28,24 +28,16 @@ const paypalBoxNode = document.createElement('div');
 paypalBoxNode.setAttribute('class', 'wall display-block');
 
 const paypalMentionNode = document.createElement('div');
-paypalMentionNode.innerText = `I'll give you `;
+paypalMentionNode.innerHTML = `Please make sure to select the <p style="color: white; margin: 0;">“Sending to a friend”</p> option when you send the donation.`;
+paypalMentionNode.style.fontSize = '1rem';
+paypalMentionNode.style.textAlign = 'center';
 
 const paypalDollarBoxNode = document.createElement('div');
 paypalDollarBoxNode.id = 'paypal-dollar-box'
 
-const paypalDollarUnitNode = document.createElement('div');
-paypalDollarUnitNode.id = 'paypal-dollar-unit'
-paypalDollarUnitNode.innerText = '$'
-
 const paypalBtnNode = document.createElement('button');
 paypalBtnNode.id = 'paypal-btn-node'
-paypalBtnNode.innerHTML = PAYPAL_LOGO + ' Send'
-
-const paypalDollarNode = document.createElement('input');
-paypalDollarNode.setAttribute('type', 'number');
-paypalDollarNode.setAttribute('min', '10');
-paypalDollarNode.id = 'paypal-amount';
-paypalDollarNode.value = '10';
+paypalBtnNode.innerHTML = PAYPAL_LOGO + ' Donation'
 
 const paypalLinkNode = document.createElement('div');
 paypalLinkNode.id = 'paypal';
@@ -55,6 +47,7 @@ tiktokLinkNode.setAttribute('href', 'https://www.tiktok.com/@' + JAMES);
 tiktokLinkNode.setAttribute('class', 'wall display-block');
 tiktokLinkNode.setAttribute('target', '_blank');
 tiktokLinkNode.innerHTML = TIKTOK_LOGO + 'TikTok Profile';
+tiktokLinkNode.style.textAlign = 'center';
 
 const imageNode = document.createElement('img');
 imageNode.style.width = '10rem';
@@ -75,24 +68,10 @@ wallNode.appendChild(pontNode);
 wallNode.appendChild(tiktokLinkNode);
 
 paypalDollarBoxNode.appendChild(paypalMentionNode);
-paypalDollarBoxNode.appendChild(paypalDollarUnitNode);
-paypalDollarBoxNode.appendChild(paypalDollarNode);
 paypalBoxNode.appendChild(paypalDollarBoxNode);
 paypalBoxNode.appendChild(paypalLinkNode);
 paypalBoxNode.appendChild(paypalBtnNode);
 wallNode.appendChild(paypalBoxNode);
 profilesNode.appendChild(wallNode);
 
-paypalBtnNode.addEventListener('click', () => {
-    const amount = parseFloat(paypalDollarNode.value);
-    if (!amount || amount <= 0) {
-        alert("금액을 정확히 입력해주세요.");
-        return;
-    }
-
-    // PayPal.me URL 생성
-    const url = `https://paypal.me/${PAYPAL_ID}/${amount}`;
-
-    // 새 창으로 열기
-    window.open(url, '_blank');
-});
+paypalBtnNode.addEventListener('click', () => window.open(`https://paypal.me/${PAYPAL_ID}`, '_blank'));
